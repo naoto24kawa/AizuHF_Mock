@@ -20,53 +20,13 @@
     <link rel="shortcut icon" href="http://hukumusume.com/jap/gazou/gazou_kensyou/hukusima.gif">
   </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
-        <div class="navbar-header">
-          <!--
-            メニューボタン
-            data-toggle : ボタンを押したときにNavbarを開かせるために必要
-            data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
-          -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- タイトルなどのテキスト -->
-          <a class="navbar-brand" href="http://naoto24kawa.github.io/main.html">FukushimaMuseum</a>
-        </div>
-        <!-- グローバルナビの中身 -->
-        <div class="collapse navbar-collapse" id="nav-menu-1">
-          <!-- 各ナビゲーションメニュー -->
-          <ul class="nav navbar-nav">
-            <!-- 通常のリンク -->
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <!-- ドロップダウンのメニューも配置可能 -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div id="header">
+    </div>
     <div class="container">
       <h1 class="text-center" style="padding:10px">Welcome to Fukushima Museum</h1>
     </div>
     <div class="container">
-      <a href="" role="button" class="btn btn-primary btn-lg btn-block">input impression</a>
+      <a href="http://naoto24kawa.github.io/input.html" role="button" class="btn btn-primary btn-lg btn-block">input impression</a>
       <a href="" role="button" class="btn btn-default btn-lg btn-block">view impression</a>
     </div>
 
@@ -74,5 +34,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- glpbal navigator loading -->
+    <script type="text/javascript">
+      $(function() {
+        $("#header").load("http://naoto24kawa.github.io/navigator.html");
+        // $("#footer").load("./files/to/footer.html");
+      });
+    </script>
   </body>
 </html>
