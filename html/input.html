@@ -7,12 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>FukushimaMuseum</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://hukumusume.com/jap/gazou/gazou_kensyou/hukusima.gif">
+
+    <!-- Application css -->
+    <link href="../css/app.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap-slider -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.1.0/css/bootstrap-slider.min.css">
-    <!-- for canvas css -->
-    <!-- <link href="cameraInput.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.1.0/css/bootstrap-slider.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,12 +24,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="http://hukumusume.com/jap/gazou/gazou_kensyou/hukusima.gif">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <!-- bootstrap-slider -->
@@ -34,13 +35,7 @@
     <!-- angular js -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
     <!-- Java script -->
-    <script src="firstImpression.js"></script>
-    <style type="text/css">
-      canvas {
-        height: auto !important;
-        width:100% !important;
-      }
-    </style>
+    <script src="../js/firstImpression.js"></script>
   </head>
   <body>
     <div id="header">
@@ -71,7 +66,7 @@
                 <div class="col-xs-12">
                   <ng-form name="formItem">
                     <input ng-attr-id="{{'ex'+item.id}}"
-                      data-slider-id='ex1Slider'
+                      data-slider-id='slider'
                       type="text"
                       data-slider-min="0"
                       data-slider-max="10"
@@ -134,15 +129,14 @@
             <div class="form-group">
               <div class="col-xs-12">
                 <!-- <input type="submit" class="btn btn-default" value="Submit" /> -->
-                <a href="http://naoto24kawa.github.io/list.html" role="button" class="btn btn-primary btn-lg btn-block">submit</a>
+                <a href="http://naoto24kawa.github.io/html/list.html" role="button" class="btn btn-primary btn-lg btn-block">submit</a>
               </div>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <!-- Java Script -->
-    <script src="cameraInput.js"></script>
+    <!-- dynamic generate for radar chart -->
     <script>
       var app = angular.module('app', []);
       app.controller('formCtrl', function () {
@@ -154,7 +148,7 @@
         // チャートの枠組み
         var radarChartData = {
         // 項目
-        labels: ["A", "B", "C", "D", "E"],
+        labels: ["adj1", "adj2", "adj3", "adj4", "adj5"],
         datasets: [
         {
          // 透明を使いたいのでRGBAで色を再現→rgba(xxx,xxx,xxx,0.5):透過度50%
@@ -241,10 +235,5 @@
         }
       });
     </script>
-    <style type="text/css">
-      #ex1Slider .slider-selection {
-        background: #BABABA;
-      }
-    </style>
   </body>
 </html>
