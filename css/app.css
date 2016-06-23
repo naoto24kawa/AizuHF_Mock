@@ -1,0 +1,8 @@
+canvas {
+  height: auto !important;
+  width: 100% !important;
+}
+
+#slider .slider-selection {
+  background: #BABABA;
+}

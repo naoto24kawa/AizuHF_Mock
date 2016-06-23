@@ -7,8 +7,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>FukushimaMuseum</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://hukumusume.com/jap/gazou/gazou_kensyou/hukusima.gif">
+
+    <!-- Application css -->
+    <link href="../css/app.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,23 +21,49 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="http://hukumusume.com/jap/gazou/gazou_kensyou/hukusima.gif">
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- chart js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-    <!-- Java script -->
-    <script src="firstImpression.js"></script>
-    <!-- canvas responsive 対応 -->
-    <style type="text/css">
-      canvas {
-        height: auto !important;
-        width: 100% !important;
-      }
-    </style>
+    <!-- Application js -->
+    <script src="../js/firstImpression.js"></script>
+    <!-- To render radar chart -->
+    <script>
+      $(function() {
+      // チャートの枠組み
+      var radarChartData = {
+      // 項目
+        labels: ["A", "B", "C", "D", "E"],
+        datasets: [
+        {
+         // 透明を使いたいのでRGBAで色を再現→rgba(xxx,xxx,xxx,0.5):透過度50%
+         fillColor: "rgba(244,250,130,0.7)",  // チャート内の色
+         strokeColor: "#111111",  // チャートを囲む線の色
+         pointColor: "#111111",   // チャートの点の色
+         pointStrokeColor: "#fff",    // 点を囲む線の色
+         // 各項目の値
+         data: [6,8,2,9,6]
+         }
+                   ]
+         };
+         // レーダーチャートの目盛とかの設定
+         var canvas = document.getElementById("canvas");
+         var context = canvas.getContext("2d");
+         var chart = new Chart(context);
+         var rader = chart.Radar(radarChartData, {
+         scaleShowLabels: true,  // 目盛を表示（true/false）
+         pointLabelFontSize : 10, // ラベルのフォントサイズ
+         scaleOverride : true, // 目盛の最大値を手動設定（true/false）
+         scaleSteps : 10, // 目盛の数
+         scaleStartValue : 0, // 目盛の最初の数
+         scaleStepWidth : 1, // 目盛の間隔
+         // 目盛の最大値の計算：scaleSteps（目盛の数）→5　scaleStepWidth（目盛の間隔）→2 だと5×2で最大値は10
+         });
+       });
+    </script>
   </head>
   <body>
     <div id="header">
@@ -78,38 +109,5 @@
         </tbody>
       </table>
     </div>
-    <script>
-      $(function() {
-      // チャートの枠組み
-      var radarChartData = {
-      // 項目
-        labels: ["A", "B", "C", "D", "E"],
-        datasets: [
-        {
-         // 透明を使いたいのでRGBAで色を再現→rgba(xxx,xxx,xxx,0.5):透過度50%
-         fillColor: "rgba(244,250,130,0.7)",  // チャート内の色
-         strokeColor: "#111111",  // チャートを囲む線の色
-         pointColor: "#111111",   // チャートの点の色
-         pointStrokeColor: "#fff",    // 点を囲む線の色
-         // 各項目の値
-         data: [6,8,2,9,6]
-         }
-                   ]
-         };
-         // レーダーチャートの目盛とかの設定
-         var canvas = document.getElementById("canvas");
-         var context = canvas.getContext("2d");
-         var chart = new Chart(context);
-         var rader = chart.Radar(radarChartData, {
-         scaleShowLabels: true,  // 目盛を表示（true/false）
-         pointLabelFontSize : 10, // ラベルのフォントサイズ
-         scaleOverride : true, // 目盛の最大値を手動設定（true/false）
-         scaleSteps : 10, // 目盛の数
-         scaleStartValue : 0, // 目盛の最初の数
-         scaleStepWidth : 1, // 目盛の間隔
-         // 目盛の最大値の計算：scaleSteps（目盛の数）→5　scaleStepWidth（目盛の間隔）→2 だと5×2で最大値は10
-         });
-       });
-    </script>
   </body>
 </html>
