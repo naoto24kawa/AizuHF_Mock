@@ -8,17 +8,42 @@ canvas {
 }
 
 #slider1 .slider-selection {
-  background: linear-gradient(90deg, #E8EAF6, #3F51B5);
+  /* Webkit系 */
+  background: -webkit-gradient(linear, left top, right top, from(#E8EAF6), to(#3F51B5));
+  /* Mozilla系 */
+  background: -moz-linear-gradient(left, #E8EAF6, #3F51B5);
+  /* IE10+ */
+  background: -ms-linear-gradient(left, #E8EAF6, #3F51B5);
 }
 #slider2 .slider-selection {
-  background: linear-gradient(90deg, #E8F5E9, #4CAF50);
+  /* Webkit系 */
+  background: -webkit-gradient(linear, left top, right top, from(#E8F5E9), to(#4CAF50));
+  /* Mozilla系 */
+  background: -moz-linear-gradient(left, #E8F5E9, #4CAF50);
+  /* IE10+ */
+  background: -ms-linear-gradient(left, #E8F5E9, #4CAF50);
 }
 #slider3 .slider-selection {
-  background: linear-gradient(90deg, #FFFDE7, #FFEB3B);
+  /* Webkit系 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFFDE7), to(#FFEB3B));
+  /* Mozilla系 */
+  background: -moz-linear-gradient(left, #FFFDE7, #FFEB3B);
+  /* IE10+ */
+  background: -ms-linear-gradient(left, #FFFDE7, #FFEB3B);
 }
 #slider4 .slider-selection {
-  background: linear-gradient(90deg, #FFF3E0, #FF9800);
+  /* Webkit系 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFF3E0), to(#FF9800));
+  /* Mozilla系 */
+  background: -moz-linear-gradient(left, #FFF3E0, #FF9800);
+  /* IE10+ */
+  background: -ms-linear-gradient(left, #FFF3E0, #FF9800);
 }
 #slider5 .slider-selection {
-  background: linear-gradient(90deg, #FFEBEE, #F44336);
+  /* Webkit系 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFEBEE), to(#F44336));
+  /* Mozilla系 */
+  background: -moz-linear-gradient(left, #FFEBEE, #F44336);
+  /* IE10+ */
+  background: -ms-linear-gradient(left, #FFEBEE, #F44336);
 }
