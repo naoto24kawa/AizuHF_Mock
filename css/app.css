@@ -7,6 +7,18 @@ canvas {
   width: 100% !important;
 }
 
-#slider .slider-selection {
-  background: #BABABA;
+#slider1 .slider-selection {
+  background: linear-gradient(90deg, #E8EAF6, #3F51B5);
+}
+#slider2 .slider-selection {
+  background: linear-gradient(90deg, #E8F5E9, #4CAF50);
+}
+#slider3 .slider-selection {
+  background: linear-gradient(90deg, #FFFDE7, #FFEB3B);
+}
+#slider4 .slider-selection {
+  background: linear-gradient(90deg, #FFF3E0, #FF9800);
+}
+#slider5 .slider-selection {
+  background: linear-gradient(90deg, #FFEBEE, #F44336);
 }
